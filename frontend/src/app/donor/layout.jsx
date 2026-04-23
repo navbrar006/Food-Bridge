@@ -29,7 +29,7 @@ export default function DonorPage() {
       const cookedDateTime = `${cookDate}T${cookTime}`;
 
       const data = await apiRequest(
-        "/api/donations",
+        "/donations",
         "POST",
         {
           food_type: Number(foodType),
@@ -66,7 +66,7 @@ export default function DonorPage() {
       setDonating(true);
 
       await apiRequest(
-        "/api/donations",
+        "/donations",
         "POST",
         {
           food_type: Number(foodType),

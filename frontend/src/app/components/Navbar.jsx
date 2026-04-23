@@ -24,6 +24,9 @@ export default function Navbar() {
         <a href="#" className="hover:opacity-70">Features</a>
         <a href="#" className="hover:opacity-70">About</a>
         <a href="#" className="hover:opacity-70">Contact</a>
+        <Link href="/ngo" className="hover:opacity-70">
+NGO
+</Link>
       </div>
 
       {/* Actions */}

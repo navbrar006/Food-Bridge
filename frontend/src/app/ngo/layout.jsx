@@ -1,17 +1,16 @@
-import "./globals.css";
-import { Providers } from "@/components/theme-provider";
+import Navbar from "../components/Navbar";
 
-export const metadata = {
-  title: "My App",
-  description: "App",
-};
+export default function NGOLayout({ children }) {
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+return (
+<>
+<Navbar />
+
+<div className="pt-24">
+{children}
+</div>
+
+</>
+);
+
 }

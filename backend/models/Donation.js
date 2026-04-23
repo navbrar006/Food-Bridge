@@ -24,7 +24,13 @@ ref:"NGO"
 
 status:{
 type:String,
-enum:["pending","accepted","rejected"],
+enum:[
+"pending",
+"accepted",
+"rejected",
+"picked_up",
+"delivered"
+],
 default:"pending"
 }
 

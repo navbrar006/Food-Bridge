@@ -1,14 +1,37 @@
-export default function VolunteerLayout({ children }) {
-  return (
-    <div className="min-h-screen bg-black text-white">
+import Link from "next/link";
 
-      <div className="p-4 border-b border-white/10 flex justify-between">
-        <h1 className="text-purple-400 font-bold text-xl">Volunteer Panel</h1>
-        <a href="/" className="text-sm text-gray-400 hover:text-white">Logout</a>
-      </div>
+export default function VolunteerLayout({
+children
+}){
 
-      <div className="p-6">{children}</div>
+return(
 
-    </div>
-  );
+<div className="min-h-screen bg-black text-white">
+
+<div className="p-4 border-b border-white/10 flex justify-between">
+
+<h1 className="text-purple-400 font-bold text-xl">
+Volunteer Panel
+</h1>
+
+<Link
+href="/"
+className="text-sm text-gray-400 hover:text-white"
+>
+Logout
+</Link>
+
+</div>
+
+
+<div className="p-6">
+
+{children}
+
+</div>
+
+</div>
+
+);
+
 }

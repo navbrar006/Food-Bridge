@@ -76,22 +76,72 @@ exports.getAllDonations = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+exports.updateStatus = async (req,res)=>{
 
-// UPDATE STATUS
-exports.updateStatus = async (req, res) => {
-  try {
-    const donation = await Donation.findById(req.params.id);
-    if (!donation)
-      return res.status(404).json({ msg: "Donation not found" });
+try{
 
-    donation.status = req.body.status;
-    await donation.save();
+const donation=
+await Donation.findById(req.params.id);
 
-    res.json(donation);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+if(!donation){
+return res.status(404).json({
+msg:"Donation not found"
+});
+}
+
+const nextStatus=req.body.status;
+
+const allowed={
+pending:["accepted","rejected"],
+accepted:["picked_up"],
+picked_up:["delivered"]
 };
+
+if(
+allowed[donation.status] &&
+!allowed[donation.status].includes(nextStatus)
+){
+return res.status(400).json({
+error:"Invalid transition"
+});
+}
+
+donation.status=nextStatus;
+
+await donation.save();
+
+res.json(donation);
+console.log(
+"NGO updated:",
+req.params.id,
+req.body.status
+);
+}
+
+catch(err){
+
+res.status(500).json({
+error:err.message
+});
+
+}
+
+};
+// // UPDATE STATUS
+// exports.updateStatus = async (req, res) => {
+//   try {
+//     const donation = await Donation.findById(req.params.id);
+//     if (!donation)
+//       return res.status(404).json({ msg: "Donation not found" });
+
+//     donation.status = req.body.status;
+//     await donation.save();
+
+//     res.json(donation);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
 
 // NGO FILTER
 exports.getDonationsByNGO = async (req, res) => {
