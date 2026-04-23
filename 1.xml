@@ -1,0 +1,71 @@
+<mxfile>
+  <diagram name="Blood Bank ER Diagram">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Entities -->
+        <mxCell id="patient" value="Patient" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="hospital" value="Hospital" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="request" value="Request" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="400" y="250" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="allocation" value="Allocation" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="250" y="400" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="donor" value="Donor" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="900" y="250" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="donation" value="Donation" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="700" y="400" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bloodbank" value="Blood Bank" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="1000" y="100" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bloodunit" value="Blood Unit" style="shape=rectangle" vertex="1" parent="1">
+          <mxGeometry x="500" y="500" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="rel1" value="Has" style="shape=rhombus" vertex="1" parent="1">
+          <mxGeometry x="530" y="100" width="80" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" value="Requests" style="shape=rhombus" vertex="1" parent="1">
+          <mxGeometry x="450" y="180" width="80" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel3" value="Allocated" style="shape=rhombus" vertex="1" parent="1">
+          <mxGeometry x="300" y="320" width="80" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel4" value="Donates" style="shape=rhombus" vertex="1" parent="1">
+          <mxGeometry x="820" y="320" width="80" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="e1" edge="1" source="patient" target="rel2" parent="1"/>
+        <mxCell id="e2" edge="1" source="rel2" target="request" parent="1"/>
+        <mxCell id="e3" edge="1" source="request" target="rel3" parent="1"/>
+        <mxCell id="e4" edge="1" source="rel3" target="allocation" parent="1"/>
+        <mxCell id="e5" edge="1" source="patient" target="rel1" parent="1"/>
+        <mxCell id="e6" edge="1" source="rel1" target="hospital" parent="1"/>
+        <mxCell id="e7" edge="1" source="donor" target="rel4" parent="1"/>
+        <mxCell id="e8" edge="1" source="rel4" target="donation" parent="1"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
