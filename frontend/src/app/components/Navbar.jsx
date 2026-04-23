@@ -27,12 +27,12 @@ export default function Navbar() {
         <Link href="/ngo" className="hover:opacity-70">
 NGO
 </Link>
-      </div>
+      {/* </div>
 
       {/* Actions */}
       <div className="flex items-center gap-4">
 
-        <ThemeToggle />
+       
 
         {/* Login */}
         <button
