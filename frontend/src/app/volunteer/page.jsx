@@ -4,8 +4,8 @@ import { useState,useEffect } from "react";
 
 export default function VolunteerPage(){
 
-const API_BASE="http://localhost:5000/api";
-
+// const API_BASE="http://localhost:5000/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 /* Demo NGO delivery location */
 const NGO_LAT=30.7400;
 const NGO_LNG=76.7800;
